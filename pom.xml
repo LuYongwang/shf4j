@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lu.yongwang.shf4j</groupId>
+    <artifactId>shf4j-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <name>SHF4J</name>
+    <description>Top SHF4J project pom.xml file</description>
+    <url>https://shf4j.yongwang.lu</url>
+
+    <inceptionYear>2022</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/LuYongwang/shf4j</url>
+        <connection>scm:git:https://github.com/LuYongwang/shf4j.git</connection>
+    </scm>
+
+    <properties>
+        <!-- Jdk Version -->
+        <jdk.version>8</jdk.version>
+        <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.target>${jdk.version}</maven.compiler.target>
+        <!-- Charset -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- used in integration testing -->
+        <junit.version>4.13.1</junit.version>
+
+    </properties>
+
+    <developers>
+        <developer>
+            <id>luyongwang</id>
+            <name>Yongwang Lu</name>
+            <email>yongwang.lu@qq.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>shf4j-api</module>
+        <module>shf4j-httpclient4</module>
+        <module>shf4j-jdk</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>lu.yongwang.shf4j</groupId>
+                <artifactId>shf4j-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
